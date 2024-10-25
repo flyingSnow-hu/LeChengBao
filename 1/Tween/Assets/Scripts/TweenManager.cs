@@ -31,6 +31,21 @@ public class TweenManager : MonoBehaviour
         IEase ease = new Linear(time, pingpong);
         Instance.EaseObjects.Add(new EasePosition(){gameObject=gameObject, ease = ease, begin=begin, end = end});
 	}
+    public void MoveEaseIn(GameObject gameObject, Vector3 begin, Vector3 end, float time, bool pingpong)
+    {
+        IEase ease = new EaseIn(time, pingpong);
+        Instance.EaseObjects.Add(new EasePosition(){gameObject=gameObject, ease = ease, begin=begin, end = end});
+	}
+    public void MoveEaseOut(GameObject gameObject, Vector3 begin, Vector3 end, float time, bool pingpong)
+    {
+        IEase ease = new EaseOut(time, pingpong);
+        Instance.EaseObjects.Add(new EasePosition(){gameObject=gameObject, ease = ease, begin=begin, end = end});
+	}
+    public void MoveEaseInOut(GameObject gameObject, Vector3 begin, Vector3 end, float time, bool pingpong)
+    {
+        IEase ease = new EaseInOut(time, pingpong);
+        Instance.EaseObjects.Add(new EasePosition(){gameObject=gameObject, ease = ease, begin=begin, end = end});
+	}
 
     private HashSet<EasePosition> EaseObjects = new HashSet<EasePosition>();
 

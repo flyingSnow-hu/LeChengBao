@@ -10,22 +10,6 @@ public class Linear:AbEase
 
     override public float GetInterploation()
     {
-        float turns = (Time.time - start) / time;
-        if (pingpong)
-        {
-            int IntergerPart = Mathf.FloorToInt(turns);
-            bool positive = (IntergerPart & 1) == 0;
-            float remainPart = turns - IntergerPart;
-            if (positive) 
-            {
-                return remainPart;
-            }else
-            {
-                return 1 - remainPart;
-            }
-        }else
-        {
-            return Math.Clamp(turns, 0 , 1);
-        }
+        return GetLinearInterploation();
     }
 }
