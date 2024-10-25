@@ -60,5 +60,7 @@ public class TweenManager : MonoBehaviour
         {
             easeObj.Move();
         }
+
+        EaseObjects.RemoveWhere(o => o.ease.IsCompleted());
     }
 }
