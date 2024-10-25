@@ -1,6 +1,5 @@
 using UnityEngine;
 using System;
-using UnityEditor.UI;
 
 public class EaseIn:AbEase
 {

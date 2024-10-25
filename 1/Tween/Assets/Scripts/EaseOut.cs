@@ -1,6 +1,5 @@
 using UnityEngine;
 using System;
-using UnityEditor.UI;
 
 public class EaseOut:AbEase
 {
@@ -11,6 +10,7 @@ public class EaseOut:AbEase
     override public float GetInterploation()
     {
         float interploation = GetLinearInterploation();
-        return Mathf.Sqrt(interploation);
+        float minusInterploation = 1 - interploation;
+        return 1 - (minusInterploation * minusInterploation);
     }
 }
